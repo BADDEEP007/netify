@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap");
+
+* {
+  font-family: "Nunito", "Helvetica";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navLogo img {
+  height: 40px;
+  width: auto;
+  ;
+
+}
+.navLogo{
+  z-index: 11;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0rem 12.5rem;
+  
+  width: 100%;
+  height: 8.5rem;
+  margin: 0 auto;
+  background: linear-gradient(to bottom ,#ffebb4,#E4F8E8);
+  position: relative;
+}
+
+.navLink {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  
+  z-index: 11;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a {
+  
+  text-decoration: none;
+  color: #85640B;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.navLinks li a:hover {
+  border: 2px solid #85640B;
+}
+
+.navLinks li a.active {
+  border: 2px solid #85640B;
+}
+
+.navButtons {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+}
+
+.navButtons a {
+  text-decoration: none;
+}
+
+.navButtons h1 {
+  color: #85640B;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 3px solid #85640B;
+  transition: all 0.4s ease-in-out; /* Slightly longer for a smooth effect */
+  background: linear-gradient(135deg, #fffbe6, #ffeb99);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: center;
+  background-size: 200% 200%; /* Needed for gradient animation */
+}
+
+.navButtons h1:hover {
+  background: linear-gradient(135deg, #ffeb99, #c1fff65c);
+  color: #5a2e0e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background-position: right center; /* Creates smooth color transition */
+}
+
+.navButtons h1:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);.navButtons h1 {
+    color: #85640B;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 3px solid #85640B;
+    transition: all 0.4s ease-in-out; /* Slightly longer for a smooth effect */
+    background: linear-gradient(135deg, #fffbe6, #ffeb99);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: center;
+    background-size: 200% 200%; /* Needed for gradient animation */
+  }
+
+}
+
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  z-index: 1000;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #85640B;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.Phone{
+  display: none;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .navLinks li a{
+    font-size: 1rem;
+  }
+
+  .navContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .navButtons {
+    display: none;
+  }
+
+  .Phone{
+    display: block;
+  }
+
+  .Phone h1{
+    font-size: .6rem;
+    padding: 0.4rem .8rem;
+  }
+  .navButtons Link{
+    font-size: 12px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navLink {
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+     /* Replace the gradient with a glassy effect */
+  background: rgba(255, 235, 180, 0.274);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* Add subtle border for the glass effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.234);
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    z-index: 999;
+  }
+
+  .navLink.open {
+    margin-top: 20px;
+    top: 80px;
+    opacity: 1;
+    display: flex;
+    z-index: 999;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .navLinks li {
+    width: 100%;
+  }
+
+  .navLinks li a {
+    display: block;
+    text-align: center;
+    width: 90%;
+    padding: .3rem;
+  }
+}
